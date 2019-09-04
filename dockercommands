@@ -1,0 +1,21 @@
+sudo pip install docker-compose
+sudo docker-compose up
+
+sudo docker build -t dockerimagetest1 .
+sudo docker run --name test1container --rm dockerimagetest1
+
+sudo docker container rm test1container
+
+sudo docker volume create --name DataVolume
+sudo docker volume inspect DataVolume
+
+How to run code and data container.
+sudo docker run --name test1container --rm -v DataVolume:/datavolume dockerimagetest1
+
+How to view the data.
+sudo docker run --rm -it -v DataVolume:/datavolume ubuntu
+
+sudo docker start (starting a previously stopped container)
+sudo docker stop (stopping a a running container)
+
+docker run = docker pull + docker start
