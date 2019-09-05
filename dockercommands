@@ -1,3 +1,6 @@
+sudo docker run --name mongodb -d -it -p 27017:27017 mongo mongod --bind_ip_all
+sudo docker exec -i -t mongodb bash
+
 sudo pip install docker-compose
 sudo docker-compose up
 
